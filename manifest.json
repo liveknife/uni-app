@@ -52,9 +52,11 @@
         /* 小程序特有相关 */
         "appid" : "wxad46b83237076d82",
         "setting" : {
-            "urlCheck" : true,
-            "postcss" : false,
-            "checkSitMap": false
+            "urlCheck" : false,
+            "postcss" : true,
+            "checkSitMap" : false,
+            "es6" : true,
+            "minified" : true
         },
         "usingComponents" : true
     },
