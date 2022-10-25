@@ -1,5 +1,8 @@
 <template>
   <view>
+    <view class="search-box">
+        <my-search @myclick="handleClick"></my-search>
+    </view>
     <!-- 轮播图区域 -->
     <!-- indicator-dots="true" 小圆点 -->
     <!-- autoplay自动播放 interval播放的间隔时间 circular开始轮播图自动播放 -->
@@ -60,6 +63,12 @@
       this.getFloorList()
     },
     methods: {
+      // 跳转搜索
+      handleClick(){
+        uni.navigateTo({
+          url:'/subpkg/search/search'
+        })
+      },
       // 获取轮播图的接口方法
       async getSwiperList() {
         // console.log('轮播图')
@@ -154,5 +163,10 @@
   .floor-img-box {
     display: flex;
     padding-left: 10rpx;
+  }
+  .search-box{
+    position: sticky;
+    top: 0;
+    z-index: 999;
   }
 </style>

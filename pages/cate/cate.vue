@@ -1,5 +1,7 @@
 <template>
   <view>
+    <!-- 自定义搜索组件 -->
+    <my-search @myclick="handleClick"></my-search>
     <view class="scroll-view-container">
       <!-- 左侧滑动区域 -->
       <scroll-view class="left-scroll-view" scroll-y="true" style="height: 300px;" :style="{height: wh + 'px'}">
@@ -38,10 +40,16 @@
     onLoad() {
       // 页面初始化的时候获取屏幕可用高度
       const sysInfo = uni.getSystemInfoSync()
-      this.wh = sysInfo.windowHeight
+      this.wh = sysInfo.windowHeight - 50
       this.getCateList()
     },
     methods:{
+      // 跳转搜索
+      handleClick(){
+        uni.navigateTo({
+          url:'/subpkg/search/search'
+        })
+      },
       async getCateList() {
         const {
           data: res
