@@ -6,7 +6,8 @@ import App from './App'
   import { $http } from '@escook/request-miniprogram'
   // 在 uni-app 项目中，可以把 $http 挂载到 uni 顶级对象之上，方便全局调用
   uni.$http = $http
-  $http.baseUrl = 'https://www.uinav.com'
+  // $http.baseUrl = 'https://www.uinav.com'
+  $http.baseUrl = 'https://api-hmugo-web.itheima.net'  
   // 请求拦截器  请求开始之前做一些事情
   $http.beforeRequest = function (options) {
     // 数据请求开始加载动画开启
